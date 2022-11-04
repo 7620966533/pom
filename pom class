@@ -1,0 +1,41 @@
+package Sec3_Pom;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class OrangeHRLMLoginPage1 {
+	
+	//POM1
+	@FindBy(xpath="//input[@name='username']")	private WebElement UN;
+	
+	@FindBy(xpath="//input[@name='password']") private WebElement PSW;
+						 
+	@FindBy(xpath=" //button[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']") private WebElement	LoginBtn;
+	
+	//2.initialize within a constructor with access level public using page factory
+	
+	public  OrangeHRLMLoginPage1 ( WebDriver driver)
+	{
+		PageFactory.initElements(driver, this);
+	
+	}
+	
+	//3.utilize within a method with access level public 
+	
+	public void EnterUserName()
+	{
+		UN.sendKeys("Admin");
+	}
+	public void Password()
+	{
+		PSW.sendKeys("admin123");
+	}
+	public void ClickLoginbtn()
+	{
+	LoginBtn.click();	
+	}
+
+
+}
